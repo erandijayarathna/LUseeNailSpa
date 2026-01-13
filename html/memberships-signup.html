@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LUsee Nail Spa - Membership Signup</title>
+    <link rel="stylesheet" href="../css/signup.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Membership Signup</h1>
+        <form id="membershipForm">
+            <input type="hidden" id="membershipPackage">
+            
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" required>
+            </div>
+            
+            <div class="package-display" id="packageInfo">
+                <p id="loadingMessage">Loading package information...</p>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Complete Signup</button>
+        
+        </form>
+    </div>
+    <button type="submit" class="btn btn-primary" style=" margin-top:20px;max-width:200px ;"><a href="../index.html" style="text-decoration:none; color:white"><i class="fas fa-chevron-left"></i><i class="fas fa-chevron-left"></i><i class="fas fa-chevron-left"></i>  Go Back</a></button>
+    <script src="../js/membership-form.js"></script>
+</body>
+</html>

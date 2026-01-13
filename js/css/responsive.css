@@ -1,0 +1,142 @@
+/* Tablet and Smaller Desktop */
+@media (max-width: 992px) {
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-image {
+        margin-top: 40px;
+    }
+
+    .booking-container,
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-info,
+    .contact-map {
+        order: -1;
+    }
+
+    .testimonial-card {
+        flex: 0 0 calc(50% - 15px); /* 2 cards on tablet */
+      }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+    .section-padding {
+        padding: 60px 0;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: var(--light-color);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition);
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .membership-plans {
+        grid-template-columns: 1fr;
+    }
+    
+    .membership-form {
+        padding: 30px 20px;
+    }
+
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .footer-links {
+        justify-content: center;
+    }
+
+    .testimonial-card {
+        flex: 0 0 85%; /* 1 card on mobile with peek */
+        min-width: 85%;
+      }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .service-card,
+    .membership-card,
+    .booking-form,
+    .booking-info,
+    .contact-form {
+        padding: 30px 20px;
+    }
+
+    .back-to-top {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .whatsapp-widget {
+      bottom: 20px;
+      right: 20px;
+    }
+    
+    .whatsapp-panel {
+      width: 280px;
+    }
+  }

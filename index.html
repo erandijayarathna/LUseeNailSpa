@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUsee Nail Spa - Luxury Nail Care & Spa Treatments</title>
+    <meta name="description" content="Premium nail salon offering manicures, pedicures, gel nails, and spa treatments. Book your appointment online today.">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <i class="fas fa-spa"></i> LUsee Nail Spa
+                </a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#membership">Membership</a></li>
+                    <li><a href="#booking">Contact</a></li>
+                </ul>
+                <div class="nav-buttons">
+                    <a href="#booking" class="btn btn-primary">Book Now</a>
+                    <button class="hamburger" id="hamburger">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Luxury Nail Care & Spa</h1>
+                <p>Experience premium manicures, pedicures, and relaxing spa treatments in our elegant salon</p>
+                <div class="hero-buttons">
+                    <a href="#booking" class="btn btn-primary">Book Appointment</a>
+                    <a href="#services" class="btn btn-secondary">Our Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section-padding" id="about">
+        <div class="container">
+           
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Welcome to LUsee Nail Spa</h3>
+                    <p>Founded in 2020, we've been dedicated to providing exceptional nail care services in a clean, comfortable environment. Our team of skilled technicians stays current with the latest trends and techniques to bring you the best possible experience.</p>
+                    <p>We use only high-quality, professional products and maintain strict sanitation standards to ensure your safety and satisfaction.</p>
+                    <ul class="about-features">
+                        <li><i class="fas fa-check"></i> Certified nail technicians</li>
+                        <li><i class="fas fa-check"></i> Premium quality products</li>
+                        <li><i class="fas fa-check"></i> Hygienic environment</li>
+                        <li><i class="fas fa-check"></i> Relaxing atmosphere</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <img src="https://nunailssalon.com/wp-content/uploads/2024/02/Nu-Nails-Salon-No1.jpg" alt="LUsee Nail Spa interior" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services section-padding" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h3>We offered Professional nail care tailored to your needs</h3>
+                
+            </div>
+            <div class="services-grid" id="servicesContainer">
+                <!-- Services will be loaded via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery section-padding" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Gallery</h2>
+                <p>See our latest work</p>
+            </div>
+            <div class="gallery-grid" id="galleryContainer">
+                <!-- Gallery items will be loaded via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Section -->
+    <section class="membership section-padding" id="membership">
+        <div class="container">
+            <div class="section-header">
+                <h2>Join our  VIP exclusive membership program</h2>
+                
+            </div>
+            <div class="membership-plans" id="membershipContainer">
+                <!-- Membership plans will be loaded via JavaScript -->
+            </div>
+        </div>
+    </section>
+        
+
+    <!-- Booking Section -->
+    <section class="booking section-padding" id="booking">
+        <div class="container">
+            <div class="section-header">
+                <h2>Book Your Appointment</h2>
+                <p>Schedule your visit online</p>
+            </div>
+            <div class="booking-container">
+                <div class="booking-form">
+                    <form id="appointmentForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <select id="service" required>
+                                <option value="">Select Service</option>
+                                <!-- Services populated via JavaScript -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="date" id="date" required>
+                        </div>
+                        <div class="form-group">
+                            <select id="time" required>
+                                <option value="">Select Time</option>
+                                <!-- Times  populated via JavaScript -->
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Book Appointment</button>
+                    </form>
+                </div>
+                <div class="booking-info">
+                    <h3 style="text-align:center">Contact Information</h3>
+                </br>
+                </br>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>123 Beauty Street, Nail City, NC 28000</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>(555) 123-4567</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>info@luseenailspa.com</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <p>Monday-Friday: 9AM-7PM<br>Saturday: 9AM-5PM<br>Sunday: 11AM-4PM</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-yelp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Clients Say</h2>
+                <p>Real experiences from our happy customers</p>
+            </div>
+            <div class="testimonials-wrapper">
+              
+            <div class="testimonials-slider" id="testimonialsContainer">
+                <!-- Testimonials will be loaded via JavaScript -->
+            </div>
+           
+            <div class="testimonial-nav">
+                <button id="testimonialPrev"><i class="fas fa-chevron-left"></i></button>
+                <button id="testimonialNext"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>LUsee Nail Spa</h3>
+                    <p>Providing premium nail care services in a luxurious and relaxing environment since 2020.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#services">Manicures</a></li>
+                        <li><a href="#services">Pedicures</a></li>
+                        <li><a href="#services">Gel Nails</a></li>
+                        <li><a href="#services">Acrylics</a></li>
+                        <li><a href="#services">Nail Art</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Beauty Street, NC</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@luseenailspa.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="contact-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3221.396027900963!2d-80.8431256847276!3d35.22724098013547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8856a02efb000807%3A0xa24c5a5e1c374d9d!2s123%20Beauty%20St%2C%20Charlotte%2C%20NC%2028000%2C%20USA!5e0!3m2!1sen!2s!4v1620000000000!5m2!1sen!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 LUsee Nail Spa. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="html/privacy.html">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#home" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- WhatsApp Toggle Button & Panel -->
+   <div class="whatsapp-widget">
+      <div class="whatsapp-panel" id="whatsappPanel">
+      <div class="whatsapp-header">
+        <h4>Chat with LUsee Nail Spa</h4>
+        <button class="close-btn" id="closeWhatsApp">&times;</button>
+      </div>
+      <div class="whatsapp-body">
+        <p>Hi there! How can we help you?</p>
+        <form id="whatsappForm">
+          <div class="form-group">
+            <input type="text" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <input type="text" placeholder="Your Message" required>
+          </div>
+          <button type="submit" class="btn btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> <a href="https://api.whatsapp.com/send/?phone=1234567890&text&type=phone_number&app_absent=0">Send via WhatsApp</a>
+          </button>
+        </form>
+      </div>
+    </div>
+    <button class="whatsapp-btn" id="whatsappBtn">
+      <i class="fab fa-whatsapp"></i>
+    </button>
+  </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/booking.js"></script>
+    <script src="js/whatsapp.js"></script>
+</body>
+</html>
