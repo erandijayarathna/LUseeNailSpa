@@ -1,26 +1,5 @@
+const scriptURL = 'https://script.google.com/macros/s/AKfycbz6PyKx0jvoZSjiZqPtJonCyPs4sX5rVpgeO9ERbr6fpoH3AJ-1Aj0FWjFua97O6Nrnjw/exec';
 
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbz1ENPZFKv8cbpB5658nL10d2jL1N8DMgqpXe1xkSYC_WCeLH1aUoEqVRGPNz2PsM5hYw/exec';
-  const form = document.querySelector('form'); // This selects the form on your spa site
-
-  form.addEventListener('submit', e => {
-    e.preventDefault(); // Prevents the page from reloading
-    
-    // Show a "Loading" message to the user
-    alert("Sending your booking request...");
-
-    fetch(scriptURL, { 
-      method: 'POST', 
-      body: new FormData(form) 
-    })
-    .then(response => {
-      alert("Success! Your appointment at LUsee Nail Spa is booked.");
-      form.reset(); // Clears the form for the next user
-    })
-    .catch(error => {
-      console.error('Error!', error.message);
-      alert("Something went wrong. Please try again.");
-    });
-  });
 // DOM Elements
 const appointmentForm = document.getElementById('appointmentForm');
 const serviceSelect = document.getElementById('service');
@@ -39,86 +18,70 @@ const bookingServices = [
     { name: 'Nail Art (per nail)', duration: '+5 min' }
 ];
 
-// Available Time Slots
-const timeSlots = [
-    '9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM',
-    '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM'
-];
+const timeSlots = ['9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM'];
 
-// Initialize Date Picker
+// 1. Initialize Date Picker
 function initDatePicker() {
     const today = new Date();
-    const dd = String(today.getDate()).padStart(2, '0');
-    const mm = String(today.getMonth() + 1).padStart(2, '0');
-    const yyyy = today.getFullYear();
-    
-    dateInput.min = `${yyyy}-${mm}-${dd}`;
-    
-    // Disable Sundays
+    dateInput.min = today.toISOString().split('T')[0];
     dateInput.addEventListener('input', function() {
         const selectedDate = new Date(this.value);
-        if (selectedDate.getDay() === 0) { // Sunday
+        if (selectedDate.getDay() === 0) {
             alert('We are closed on Sundays. Please select another date.');
             this.value = '';
         }
     });
 }
 
-// Load Services into Select
-function loadServices() {
+// 2. Load Dropdowns
+function loadDropdowns() {
     serviceSelect.innerHTML = '<option value="">Select Service</option>';
-    bookingServices.forEach(service => {
-        const option = document.createElement('option');
-        option.value = service.name;
-        option.textContent = `${service.name} (${service.duration})`;
-        serviceSelect.appendChild(option);
-    });
-}
-
-// Load Time Slots
-function loadTimeSlots() {
+    bookingServices.forEach(s => serviceSelect.add(new Option(`${s.name} (${s.duration})`, s.name)));
+    
     timeSelect.innerHTML = '<option value="">Select Time</option>';
-    timeSlots.forEach(time => {
-        const option = document.createElement('option');
-        option.value = time;
-        option.textContent = time;
-        timeSelect.appendChild(option);
-    });
+    timeSlots.forEach(t => timeSelect.add(new Option(t, t)));
 }
 
-// Form Submission
+// 3. Merged Form Submission (Validation + Automation)
 appointmentForm.addEventListener('submit', function(e) {
     e.preventDefault();
+
+    // UI Feedback
+    const submitBtn = this.querySelector('button[type="submit"]');
     
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        phone: document.getElementById('phone').value,
-        service: serviceSelect.value,
-        date: dateInput.value,
-        time: timeSelect.value
-    };
-    
-    // Basic validation
-    if (!formData.name || !formData.email || !formData.phone || !formData.service || !formData.date || !formData.time) {
-        alert('Please fill in all fields');
+    // Manual Validation Check
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+
+    if (!name || !email || !phone || !serviceSelect.value || !dateInput.value || !timeSelect.value) {
+        alert('Please fill in all fields before booking.');
         return;
     }
+
+    // Start Automation Process
+    submitBtn.disabled = true;
+    submitBtn.innerText = "Sending Data...";
+
+    const formData = new FormData(appointmentForm);
     
-    // In a real app, you would send this data to your server
-    console.log('Booking submitted:', formData);
-    alert(`Thank you, ${formData.name}! Your appointment for ${formData.service} on ${formData.date} at ${formData.time} has been booked. We'll send a confirmation to ${formData.email}.`);
-    
-    // Reset form
-    this.reset();
+    fetch(scriptURL, { method: 'POST', body: formData })
+    .then(response => {
+        alert(`Success! Thank you, ${name}. Your appointment for ${serviceSelect.value} has been saved to our system.`);
+        appointmentForm.reset();
+    })
+    .catch(error => {
+        console.error('Error!', error.message);
+        alert("Automation Error: Could not connect to Google Sheets.");
+    })
+    .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerText = "Book Appointment";
+    });
 });
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     initDatePicker();
-    loadServices();
-    loadTimeSlots();
+    loadDropdowns();
 });
-
-
-
