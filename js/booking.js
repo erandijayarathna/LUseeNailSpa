@@ -1,4 +1,4 @@
-const scriptURL = 'https://script.google.com/macros/s/AKfycbz6PyKx0jvoZSjiZqPtJonCyPs4sX5rVpgeO9ERbr6fpoH3AJ-1Aj0FWjFua97O6Nrnjw/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwA5XoovuHTiAkMPGuxW2EL8cQBIRL0oa66zTvjKyLJQwg-lw7bm6W7GjKNvGpiMjkycQ/exec';
 
 // DOM Elements
 const appointmentForm = document.getElementById('appointmentForm');
@@ -85,3 +85,4 @@ document.addEventListener('DOMContentLoaded', () => {
     initDatePicker();
     loadDropdowns();
 });
+
